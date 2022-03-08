@@ -4,9 +4,9 @@ stages:
 Ola mundo:
   stage:
     ola
-  only:
-    variables:
-      - $RODAR == "variavel1"
+  when: manual
+  image: maven:3.6.1-jdk-8
   script:
     - echo "ola mundo"
     - echo "Ola mundo 2"
+    - mvn --version
