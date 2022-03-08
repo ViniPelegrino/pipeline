@@ -1,8 +1,9 @@
 stages:
-    - ola
+  - ola
 
 Ola mundo:
-    stage:
-        - Ola
-    script:
-        - echo "ola mundo"
+  stage:
+    ola
+  script:
+    - echo "ola mundo"
+    - echo "Ola mundo 2"
