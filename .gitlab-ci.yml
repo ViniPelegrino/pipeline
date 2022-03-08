@@ -6,7 +6,7 @@ Ola mundo:
     ola
   only:
     variables:
-      $RODAR == "variavel1"
+      - $RODAR == "variavel1"
   script:
     - echo "ola mundo"
     - echo "Ola mundo 2"
