@@ -11,5 +11,5 @@ Ola mundo:
     - id
     - ls -l
     - hostname
-    - apt-get install -y git
+    - apt-get update && apt-get install -y git
     - git branch -va
