@@ -4,7 +4,9 @@ stages:
 Ola mundo:
   stage:
     ola
-  when: manual
+  only:
+    variables:
+      $RODAR == "variavel1"
   script:
     - echo "ola mundo"
     - echo "Ola mundo 2"
