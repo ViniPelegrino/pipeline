@@ -2,6 +2,7 @@ stages:
   - ola
 
 Ola mundo:
+  image: ubuntu:21.04
   stage:
     ola
   when: manual
@@ -10,4 +11,5 @@ Ola mundo:
     - id
     - ls -l
     - hostname
+    - apt-get install -y git
     - git branch -va
