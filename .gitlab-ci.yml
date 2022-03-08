@@ -10,3 +10,4 @@ Ola mundo:
     - id
     - ls -l
     - hostname
+    - git branch -va
