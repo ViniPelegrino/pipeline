@@ -17,13 +17,16 @@
 #    changes:
 #      - teste.txt
 #      - docker/scripts/*
+#        - "*.md"
 #      - more_scripts/*.{rb,py,sh}
 
-job:
-  script: echo "Executar somente quando alterar arquivos com extensão .md"
-  only:
-    changes:
-      - "*.md"
+deploy_prod:
+  stage: deploy
+  script:
+    - echo "Deploy to production server"
+  environment:
+    name: production
+    url: https://example.com
 
 #job:
 #  script:
