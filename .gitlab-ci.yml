@@ -21,7 +21,7 @@
 job:
   script: echo "Pipeline executa quando for na branch main e com usuário claudiosilva"
   rules:
-    - if: '$CI_COMMIT_BRANCH == "main" && $GITLAB_USER_LOGIN == "jose"'
+    - if: '$CI_COMMIT_BRANCH == "main" && $GITLAB_USER_LOGIN == "claudiosilva"'
       when: manual
     - if: '$CI_COMMIT_BRANCH == "feature"'
       when: never
