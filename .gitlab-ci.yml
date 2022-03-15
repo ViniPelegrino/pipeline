@@ -8,7 +8,5 @@ job:
   script:
     - echo "Um exemplo de executar pipeline quando muda um arquivo."
   only:
-    refs:
-      - branches
     changes:
       - teste.txt
