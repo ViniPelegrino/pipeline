@@ -4,9 +4,17 @@
 #  after_script:
 #    - echo "Execute este comando depois de um conjunto completo de `script`."
 
+#job:
+#  script:
+#    - echo "Um exemplo de executar pipeline quando muda um arquivo."
+#  only:
+#    changes:
+#      - teste.txt
+#      - docker/scripts/*
+#      - more_scripts/*.{rb,py,sh}
+
 job:
   script:
-    - echo "Um exemplo de executar pipeline quando muda um arquivo."
-  only:
-    changes:
-      - teste.txt
+    - echo "Mostrando variaveis do GitLab"
+    - export
+    
