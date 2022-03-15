@@ -54,3 +54,7 @@
 #  when: delayed
 #  start_in: 1 minutes #5 seconds, 30 minutes, 1 day, 1 week
 
+test:
+  parallel: 3
+  script:
+    - echo "trabalho paralelo"
