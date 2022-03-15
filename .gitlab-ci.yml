@@ -26,3 +26,4 @@ job:
     - if: '$CI_COMMIT_BRANCH == "feature"
       when: never
       allow_failure: true
+    - if: '$CI_COMMIT_BRANCH'
