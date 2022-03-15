@@ -21,7 +21,7 @@
 job:
   script: echo "Ola mundo!"
   rules:
-    - if: '$CI_COMMIT_BRANCH == /^main/ && $GITLAB_USER_LOGIN == "claudiosilva"'
+    - if: '$CI_COMMIT_BRANCH == "main" && $GITLAB_USER_LOGIN == "claudiosilva"'
       when: manual
     - if: '$CI_COMMIT_BRANCH == /^feature/'
       when: never
