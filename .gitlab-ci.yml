@@ -33,3 +33,4 @@ job:
     - tags
   script:
     - echo " Este Job executa somente com tag."
+  when: manual
