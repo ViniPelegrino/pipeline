@@ -1,5 +1,14 @@
+#job:
+#  script:
+#    - echo "Um exemplo de sessao de script."
+#  after_script:
+#    - echo "Execute este comando depois de um conjunto completo de `script`."
+
 job:
   script:
-    - echo "An example script section."
-  after_script:
-    - echo "Execute this command after the `script` section completes."
+    - echo "Um exemplo de executar pipeline quando muda um arquivo."
+  only:
+    refs:
+      - branches
+    changes:
+      - Dockerfile
