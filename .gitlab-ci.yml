@@ -11,4 +11,4 @@ job:
     refs:
       - branches
     changes:
-      - Dockerfile
+      - teste.txt
