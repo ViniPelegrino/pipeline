@@ -54,7 +54,10 @@
 #  when: delayed
 #  start_in: 1 minutes #5 seconds, 30 minutes, 1 day, 1 week
 
-test:
-  parallel: 3
-  script:
-    - echo "trabalho paralelo"
+#job:
+#  parallel: 3
+#  script:
+#    - echo "3 trabalhos trabalho paralelo"
+
+#Fontes
+# - https://docs.gitlab.com/ee/ci/jobs/job_control.html
