@@ -20,12 +20,6 @@
 #        - "*.md"
 #      - more_scripts/*.{rb,py,sh}
 
-Executar cronometrado 10%:
-  stage: deploy
-  script: echo 'Execucao em 10% ...'
-  when: delayed
-  start_in: 1 minutes
-
 #job:
 #  script:
 #    - echo "Mostrando variaveis do GitLab"
@@ -48,8 +42,14 @@ Executar cronometrado 10%:
 #    - echo " Este Job executa somente com tag."
 #  when: manual
 
-end-to-end:
-  script: echo "Executa exceto mensagem de commit skip-tests"
-  except:
-    variables:
-      - $CI_COMMIT_MESSAGE =~ /skip-tests/
+#end-to-end:
+#  script: echo "Executa exceto mensagem de commit skip-tests"
+#  except:
+#    variables:
+#      - $CI_COMMIT_MESSAGE =~ /skip-tests/
+
+Executar cronometrado 10%:
+  stage: deploy
+  script: echo 'Execucao em 1 minuto...'
+  when: delayed
+  start_in: 1 minutes
