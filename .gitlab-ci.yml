@@ -61,3 +61,4 @@
 
 #Fontes
 # - https://docs.gitlab.com/ee/ci/jobs/job_control.html
+# Runner Docker - https://docs.gitlab.com/ee/ci/docker/using_docker_images.html
