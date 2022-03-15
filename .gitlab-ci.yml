@@ -1,15 +1,5 @@
-stages:
-  - ola
-
-Ola mundo:
-  image: ubuntu:21.04
-  stage:
-    ola
-  when: manual
+job:
   script:
-    - pwd
-    - id
-    - ls -l
-    - hostname
-    - apt-get update && apt-get install -y git
-    - git branch -va
+    - echo "An example script section."
+  after_script:
+    - echo "Execute this command after the `script` section completes."
