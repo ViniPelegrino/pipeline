@@ -33,10 +33,10 @@
 #      when: never
 #      allow_failure: true
 
-job:
+#job:
   # use special keywords
-  only:
-    - tags
-  script:
-    - echo " Este Job executa somente com tag."
-  when: manual
+#  only:
+#    - tags
+#  script:
+#    - echo " Este Job executa somente com tag."
+#  when: manual
