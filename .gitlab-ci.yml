@@ -21,7 +21,7 @@
 
 job:
   script: echo "Executar somente quando alterar arquivos com extensão .md"
-  except:
+  only:
     changes:
       - "*.md"
 
