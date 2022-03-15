@@ -48,7 +48,7 @@
 #    variables:
 #      - $CI_COMMIT_MESSAGE =~ /skip-tests/
 
-Executar cronometrado 10%:
+Executar com cronometro:
   stage: deploy
   script: echo 'Execucao em 1 minuto...'
   when: delayed
