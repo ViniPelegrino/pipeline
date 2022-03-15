@@ -42,7 +42,7 @@
 #  when: manual
 
 end-to-end:
-  script: echo "Executa exceto mensagem de commit skip-tests"
+  script: echo "Executa exceto mensagem de commit skip-tests."
   except:
     variables:
       - $CI_COMMIT_MESSAGE =~ /skip-tests/
