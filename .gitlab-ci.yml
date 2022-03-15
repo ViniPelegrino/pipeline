@@ -1,4 +1,10 @@
 #job:
+  # use special keywords
+#  when: manual
+#  script:
+#    - echo " Executa somente manual."
+
+#job:
 #  script:
 #    - echo "Um exemplo de sessao de script."
 #  after_script:
