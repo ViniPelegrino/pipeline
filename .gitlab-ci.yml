@@ -19,6 +19,12 @@
 #      - docker/scripts/*
 #      - more_scripts/*.{rb,py,sh}
 
+job:
+  script: echo "Executar somente quando alterar arquivos com extensão .md"
+  except:
+    changes:
+      - "*.md"
+
 #job:
 #  script:
 #    - echo "Mostrando variaveis do GitLab"
