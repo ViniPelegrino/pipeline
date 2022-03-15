@@ -18,12 +18,18 @@
 #    - echo "Mostrando variaveis do GitLab"
 #    - export
 
+#job:
+#  script: echo "Pipeline executa quando for na branch main e com usuário claudiosilva"
+#  rules:
+#    - if: '$CI_COMMIT_BRANCH == "main" && $GITLAB_USER_LOGIN == "claudiosilva"'
+#      when: manual
+#    - if: '$CI_COMMIT_BRANCH == "feature"'
+#      when: never
+#      allow_failure: true
+
 job:
-  script: echo "Pipeline executa quando for na branch main e com usuário claudiosilva"
-  rules:
-    - if: '$CI_COMMIT_BRANCH == "main" && $GITLAB_USER_LOGIN == "claudiosilva"'
-      when: manual
-    - if: '$CI_COMMIT_BRANCH == "feature"'
-      when: never
-      allow_failure: true
-    #- if: '$CI_COMMIT_BRANCH'
+  # use special keywords
+  only:
+    - tags
+  script:
+    - echo " Este Job executa somente com tag."
