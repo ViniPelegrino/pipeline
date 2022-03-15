@@ -19,11 +19,10 @@
 #    - export
 
 job:
-  script: echo "Ola mundo!"
+  script: echo "Pipeline executa quando for na branch main e com usuário claudiosilva"
   rules:
     - if: '$CI_COMMIT_BRANCH == "main" && $GITLAB_USER_LOGIN == "claudiosilva"'
       when: manual
-    - if: '$CI_COMMIT_BRANCH == /^feature/'
+    - if: '$CI_COMMIT_BRANCH == "feature"
       when: never
       allow_failure: true
-    - if: '$CI_COMMIT_BRANCH'
