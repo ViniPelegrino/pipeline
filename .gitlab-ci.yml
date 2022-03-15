@@ -13,8 +13,17 @@
 #      - docker/scripts/*
 #      - more_scripts/*.{rb,py,sh}
 
+#job:
+#  script:
+#    - echo "Mostrando variaveis do GitLab"
+#    - export
+
 job:
-  script:
-    - echo "Mostrando variaveis do GitLab"
-    - export
-    
+  script: echo "Ola mundo!"
+  rules:
+    - if: '$CI_COMMIT_BRANCH == /^main/ && $GITLAB_USER_LOGIN == "claudiosilva"'
+      when: never
+    - if: '$CI_COMMIT_BRANCH == /^feature/'
+      when: manual
+      allow_failure: true
+    - if: '$CI_COMMIT_BRANCH'
