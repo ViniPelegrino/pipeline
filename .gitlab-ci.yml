@@ -142,8 +142,7 @@
 
 job1: &cache
   script:
-    - echo "Ola mundo $CI_COMMIT_REF_SLUG"
-    - export
+    - echo "Ola mundo $CI_BUILD_NAME"
 job2:
   <<: *cache
   
