@@ -117,7 +117,7 @@
 #    - echo Apresenta declaração de variavel $GLOBAL_VAR"
 #    - echo Apresenta declaração de variavel $LOCAL_VAR"
 
-job1:
+job:
   script:
     - echo "Este trabalho executa quando solicita mesclagem"
   only:
