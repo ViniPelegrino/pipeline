@@ -58,12 +58,12 @@
 #  script:
 #    - echo "3 trabalhos trabalho paralelo"
 
-job:
-  only:
-    - tags
-  when: manual
-  script:
-    - echo " Este Job executa com gatilho de tag."
+#job:
+#  only:
+#    - tags
+#  when: manual
+#  script:
+#    - echo " Este Job executa com gatilho de tag."
 # Utilizado para gatilho com curl
 #curl -X POST \
 #     --fail \
@@ -71,12 +71,17 @@ job:
 #     -F "ref=0.0.1" \
 #     https://gitlab.com/api/v4/projects/34316608/trigger/pipeline
 
-job1:
-  only:
-    variables:
-      - $GATILHO == "valor"
+job:
+  timeout: 3m
   script:
-    - echo "Executando job por uma variavel == valor"
+    - echo "Sleep 30"
+
+#job1:
+#  only:
+#    variables:
+#      - $GATILHO == "valor"
+#  script:
+#    - echo "Executando job por uma variavel == valor"
 # Utilizado como teste para gatilho com curl
 #curl -X POST \
 #     --fail \
@@ -84,7 +89,6 @@ job1:
 #     -F "ref=main" \
 #     -F "variables[GATILHO]=valor" \
 #     https://gitlab.com/api/v4/projects/34316608/trigger/pipeline
-
 
 #Fontes
 # Gatilho de pipeline com Curl - https://docs.gitlab.com/ee/ci/triggers/#use-curl
