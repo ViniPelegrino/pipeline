@@ -25,6 +25,20 @@
 #    - echo "Mostrando variaveis do GitLab"
 #    - export
 
+build:
+  stage: build
+  script:
+    - echo "BUILD_VARIABLE=value_from_build_job"
+  artifacts:
+    reports:
+      dotenv: build.env
+deploy:
+  stage: deploy
+  variables:
+    BUILD_VARIABLE: value_from_deploy_job
+  script:
+    - echo "$BUILD_VARIABLE"
+
 #job:
 #  script: echo "Pipeline executa quando for na branch main e com usuário claudiosilva"
 #  rules:
@@ -127,18 +141,20 @@
 #  only:
 #    - merge_requests
 
-job1:
-  variables:
-    FOLDERS: src test docs
-  script:
-    - echo "Script com mais de uma linha."
-    - |
-      i=0
-      while [ $i -ne 5 ]
-      do
-      i=$(($i+1))
-      echo "$i"
-      done
+#job1:
+#  variables:
+#    FOLDERS: src test docs
+#  script:
+#    - echo "Script com mais de uma linha."
+#    - |
+#      i=0
+#      while [ $i -ne 5 ]
+#        do
+#          i=$(($i+1))
+#          echo "$i"
+#      done
+
+
 
 #Fontes
 # Gatilho de pipeline com Curl - https://docs.gitlab.com/ee/ci/triggers/#use-curl
