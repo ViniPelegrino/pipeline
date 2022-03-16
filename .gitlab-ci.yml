@@ -124,6 +124,14 @@
 #    - merge_requests
 
 
+deploy me:
+  script:
+    - echo "deploy"
+  environment:
+    name: production
+    url: https://cats.example.com
+    action: start
+
 #Fontes
 # Gatilho de pipeline com Curl - https://docs.gitlab.com/ee/ci/triggers/#use-curl
 # - https://docs.gitlab.com/ee/ci/jobs/job_control.html
