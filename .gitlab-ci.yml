@@ -28,14 +28,14 @@
 build:
   stage: build
   script:
-    - echo "BUILD_VARIABLE=value_from_build_job" >> build.env
+    - echo "BUILD_VARIABLE=valor_para_job_build" >> build.env
   artifacts:
     reports:
       dotenv: build.env
 deploy:
   stage: deploy
   variables:
-    BUILD_VARIABLE: value_from_deploy_job
+    BUILD_VARIABLE: valor_para_job_deploy
   script:
     - echo "$BUILD_VARIABLE"
 
