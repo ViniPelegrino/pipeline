@@ -123,7 +123,6 @@ job:
   only:
     - merge_requests
 
-
 #Fontes
 # Gatilho de pipeline com Curl - https://docs.gitlab.com/ee/ci/triggers/#use-curl
 # - https://docs.gitlab.com/ee/ci/jobs/job_control.html
