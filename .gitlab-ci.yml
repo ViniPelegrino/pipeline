@@ -25,20 +25,6 @@
 #    - echo "Mostrando variaveis do GitLab"
 #    - export
 
-build:
-  stage: build
-  script:
-    - echo "BUILD_VARIABLE=valor_para_job_build" >> build.env
-  artifacts:
-    reports:
-      dotenv: build.env
-deploy:
-  stage: deploy
-  variables:
-    BUILD_VARIABLE: valor_para_job_deploy
-  script:
-    - echo "$BUILD_VARIABLE"
-
 #job:
 #  script: echo "Pipeline executa quando for na branch main e com usuário claudiosilva"
 #  rules:
@@ -154,7 +140,16 @@ deploy:
 #          echo "$i"
 #      done
 
+variables:
+  CACHE_FALLBACK_KEY: fallback-key
 
+job1:
+  script:
+    - echo
+  cache:
+    key: "$CI_COMMIT_REF_SLUG"
+    paths:
+      - binaries/
 
 #Fontes
 # Gatilho de pipeline com Curl - https://docs.gitlab.com/ee/ci/triggers/#use-curl
