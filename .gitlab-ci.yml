@@ -59,11 +59,10 @@
 #  script:
 #    - echo "3 trabalhos trabalho paralelo"
 
-
 job:
   only:
     variables:
-      $GATILHO == "valor"
+      - $GATILHO == "valor"
   script:
     - echo "Executando pela variavel"
 #Fontes
