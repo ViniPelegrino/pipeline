@@ -117,27 +117,11 @@
 #    - echo Apresenta declaração de variavel $GLOBAL_VAR"
 #    - echo Apresenta declaração de variavel $LOCAL_VAR"
 
-jsonnet:
-  stage: build
-  image: alpine:latest
+job1:
   script:
-    - apk add -U jsonnet
-    - jsonnet gitlab-ci.jsonnet > generated-config.yml
-  artifacts:
-    paths:
-      - generated-config.yml
-
-trigger-tests:
-  stage: test
-  needs:
-    - jsonnet
-  trigger:
-    include:
-      - artifact: generated-config.yml
-        job: jsonnet
-    strategy: depend
-
-
+    - echo "Este trabalho executa quando solicita mesclagem"
+  only:
+    - merge_requests
 
 
 #Fontes
