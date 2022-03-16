@@ -140,16 +140,12 @@
 #          echo "$i"
 #      done
 
-variables:
-  CACHE_FALLBACK_KEY: fallback-key
-
-job1:
+cache: &global_cache
   script:
-    - echo
-  cache:
-    key: "$CI_COMMIT_REF_SLUG"
-    paths:
-      - binaries/
+    - echo "Exemplo de cache entre jobs $CI_COMMIT_REF_SLUG"
+job1:
+    <<: *global_cache
+
 
 #Fontes
 # Gatilho de pipeline com Curl - https://docs.gitlab.com/ee/ci/triggers/#use-curl
