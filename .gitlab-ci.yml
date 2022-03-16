@@ -41,12 +41,6 @@
 #    - echo " Este Job executa somente com tag."
 #  when: manual
 
-job:
-  only:
-    - tags
-  script:
-    - echo " Este Job executa com gatilho de tag."
-
 #end-to-end:
 #  script: echo "Executa exceto mensagem de commit skip-tests"
 #  except:
@@ -66,10 +60,19 @@ job:
 
 job:
   only:
-    variables:
-      - $GATILHO == "valor"
+    - tags
   script:
-    - echo "Executando job por uma variavel == valor"
+    - echo " Este Job executa com gatilho de tag."
+# Utilizado para gatilho com curl
+
+#job:
+#  only:
+#    variables:
+#      - $GATILHO == "valor"
+#  script:
+#    - echo "Executando job por uma variavel == valor"
+# Utilizado como teste para gatilho com curl
+
 #curl -X POST \
 #     --fail \
 #     -F token=c450ddc1e103178a5f6c1d0cd9d6e9 \
