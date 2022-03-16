@@ -61,6 +61,7 @@
 job:
   only:
     - tags
+  when: manual
   script:
     - echo " Este Job executa com gatilho de tag."
 # Utilizado para gatilho com curl
