@@ -91,6 +91,30 @@
 #     -F "variables[GATILHO]=valor" \
 #     https://gitlab.com/api/v4/projects/34316608/trigger/pipeline
 
+stages:
+  - build
+  - test
+  - deploy
+
+image: alpine
+
+build_a:
+  stage: build
+  script:
+    - echo "This job builds something."
+
+test_a:
+  stage: test
+  needs: [build_a]
+  script:
+    - echo "This job tests something."
+
+deploy_a:
+  stage: deploy
+  needs: [test_a]
+  script:
+    - echo "This job deploys something."
+
 #Fontes
 # Gatilho de pipeline com Curl - https://docs.gitlab.com/ee/ci/triggers/#use-curl
 # - https://docs.gitlab.com/ee/ci/jobs/job_control.html
