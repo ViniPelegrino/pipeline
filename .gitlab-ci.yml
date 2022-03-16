@@ -127,7 +127,17 @@
 #  only:
 #    - merge_requests
 
-
+job1:
+  variables:
+    FOLDERS: src test docs
+  script:
+    - |
+      i=0
+      while [ $i -ne 5 ]
+      do
+      i=$(($i+1))
+      echo "$i"
+      done
 
 #Fontes
 # Gatilho de pipeline com Curl - https://docs.gitlab.com/ee/ci/triggers/#use-curl
