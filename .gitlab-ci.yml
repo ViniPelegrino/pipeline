@@ -131,6 +131,7 @@ job1:
   variables:
     FOLDERS: src test docs
   script:
+    - echo "Script com mais de uma linha."
     - |
       i=0
       while [ $i -ne 5 ]
