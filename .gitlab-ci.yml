@@ -66,12 +66,12 @@ job:
     - echo " Este Job executa com gatilho de tag."
 # Utilizado para gatilho com curl
 
-#job:
-#  only:
-#    variables:
-#      - $GATILHO == "valor"
-#  script:
-#    - echo "Executando job por uma variavel == valor"
+job1:
+  only:
+    variables:
+      - $GATILHO == "valor"
+  script:
+    - echo "Executando job por uma variavel == valor"
 # Utilizado como teste para gatilho com curl
 
 #curl -X POST \
