@@ -91,6 +91,10 @@
 #     -F "variables[GATILHO]=valor" \
 #     https://gitlab.com/api/v4/projects/34316608/trigger/pipeline
 
+#job:
+#  stage: test
+#  script:
+#    - echo "$CI_JOB_STAGE"
 
 #image: alpine
 #build_a:
@@ -123,14 +127,6 @@
 #  only:
 #    - merge_requests
 
-
-job:
-  stage: test
-  script:
-    - echo "$CI_JOB_STAGE"
-    - echo "$TEST"
-    - echo "$GREETING"
-    - cat "$GREETING"
 
 
 #Fontes
