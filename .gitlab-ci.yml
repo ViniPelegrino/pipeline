@@ -28,7 +28,7 @@
 build:
   stage: build
   script:
-    - echo "BUILD_VARIABLE=value_from_build_job"
+    - echo "BUILD_VARIABLE=value_from_build_job" >> build.env
   artifacts:
     reports:
       dotenv: build.env
