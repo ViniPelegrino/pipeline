@@ -132,7 +132,7 @@ job2:
   allow_failure: false
 job3:
   script: echo "Executa mesmo sem o Job1 ser executado manualmente"
-  allow_failure: true
+  allow_failure: false
 
 
 #Fontes
