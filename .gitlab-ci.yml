@@ -140,12 +140,13 @@
 #          echo "$i"
 #      done
 
-cache: &global_cache
+job1: &cache
   script:
-    - echo "Exemplo de cache entre jobs $CI_COMMIT_REF_SLUG"
-#job1:
-#    <<: *global_cache
-
+    - echo "Ola mundo $CI_COMMIT_REF_SLUG"
+    - export
+job2:
+  <<: *cache
+  
 
 #Fontes
 # Gatilho de pipeline com Curl - https://docs.gitlab.com/ee/ci/triggers/#use-curl
