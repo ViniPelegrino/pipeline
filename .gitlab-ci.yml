@@ -34,13 +34,12 @@
 #      when: never
 #      allow_failure: true
 
-#job:
-  # use special keywords
-#  only:
-#    - tags
-#  script:
-#    - echo " Este Job executa somente com tag."
-#  when: manual
+job:
+  only:
+    - tags
+  script:
+    - echo " Este Job executa somente com tag."
+  when: manual
 
 #end-to-end:
 #  script: echo "Executa exceto mensagem de commit skip-tests"
