@@ -64,7 +64,7 @@ job:
     variables:
       - $GATILHO == "valor"
   script:
-    - echo "Executando pela variavel"
+    - echo "Executando job por uma variavel == valor"
 #Fontes
 # - https://docs.gitlab.com/ee/ci/jobs/job_control.html
 # Runner Docker - https://docs.gitlab.com/ee/ci/docker/using_docker_images.html#register-a-runner-that-uses-the-docker-executor
