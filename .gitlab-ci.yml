@@ -143,8 +143,8 @@
 cache: &global_cache
   script:
     - echo "Exemplo de cache entre jobs $CI_COMMIT_REF_SLUG"
-job1:
-    <<: *global_cache
+#job1:
+#    <<: *global_cache
 
 
 #Fontes
