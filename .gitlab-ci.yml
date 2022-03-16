@@ -128,11 +128,12 @@ job1:
   script: echo "Executa manualmente"
   when: manual
 job2:
-  script: echo "Executa mesmo sem o Job1 ser executado manualmente"
-  allow_failure: true
-job3:
   script: echo "Executa somente se o Job1 for bem-sucedido manualmente"
   allow_failure: false
+job3:
+  script: echo "Executa mesmo sem o Job1 ser executado manualmente"
+  allow_failure: true
+
 
 #Fontes
 # Gatilho de pipeline com Curl - https://docs.gitlab.com/ee/ci/triggers/#use-curl
