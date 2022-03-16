@@ -106,20 +106,16 @@
 #    - echo "este job precisa do test_a."
 
 variables:
-  GLOBAL_VAR: value
+  GLOBAL_VAR: global
 job1:
-  variables:
-    LOCAL_VAR: value
   script:
-    - echo "GLOBAL_VAR
-    - echo $LOCAL_VAR
+    - echo $GLOBAL_VAR
 job2:
   variables:
-    LOCAL_VAR: value
+    LOCAL_VAR: local
   script:
-    - echo "GLOBAL_VAR
+    - echo $GLOBAL_VAR
     - echo $LOCAL_VAR
-
 
 
 #Fontes
