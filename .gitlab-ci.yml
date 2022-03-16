@@ -72,9 +72,9 @@
 #     https://gitlab.com/api/v4/projects/34316608/trigger/pipeline
 
 job:
-  timeout: 40s
+  timeout: 21s
   script:
-    - echo "Sleep 30"
+    - sleep 20
 
 #job1:
 #  only:
