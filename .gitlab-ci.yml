@@ -129,7 +129,7 @@ job1:
   when: manual
 job2:
   script: echo "Executa somente se o Job1 for bem-sucedido manualmente"
-  allow_failure: false
+  when: on_success
 job3:
   script: echo "Executa mesmo sem o Job1 ser executado manualmente"
   allow_failure: false
