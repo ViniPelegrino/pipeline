@@ -117,11 +117,12 @@
 #    - echo Apresenta declaração de variavel $GLOBAL_VAR"
 #    - echo Apresenta declaração de variavel $LOCAL_VAR"
 
-job:
-  script:
-    - echo "Este trabalho executa quando solicita mesclagem"
-  only:
-    - merge_requests
+#job:
+#  script:
+#    - echo "Este trabalho executa quando solicita mesclagem"
+#  only:
+#    - merge_requests
+
 
 #Fontes
 # Gatilho de pipeline com Curl - https://docs.gitlab.com/ee/ci/triggers/#use-curl
