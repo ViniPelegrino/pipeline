@@ -71,10 +71,11 @@
 #     -F "ref=0.0.1" \
 #     https://gitlab.com/api/v4/projects/34316608/trigger/pipeline
 
-job:
-  timeout: 1m
-  script:
-    - sleep 20
+#job:
+#  timeout: 1m
+#  script:
+#    - sleep 20
+#    - echo "executa com timeout para o stage com maximo de 1 minuto"
 
 #job1:
 #  only:
