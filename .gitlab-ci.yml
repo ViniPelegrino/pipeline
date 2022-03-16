@@ -105,18 +105,17 @@
 #  script:
 #    - echo "este job precisa do test_a."
 
-variables:
-  GLOBAL_VAR: global
-job1:
-  script:
-    - echo $GLOBAL_VAR
-job2:
-  variables:
-    LOCAL_VAR: local
-  script:
-    - echo $GLOBAL_VAR
-    - echo $LOCAL_VAR
-
+#variables:
+#  GLOBAL_VAR: global
+#job1:
+#  script:
+#    - echo " Apresenta declaração de variavel $GLOBAL_VAR"
+#job2:
+#  variables:
+#    LOCAL_VAR: local
+#  script:
+#    - echo Apresenta declaração de variavel $GLOBAL_VAR"
+#    - echo Apresenta declaração de variavel $LOCAL_VAR"
 
 #Fontes
 # Gatilho de pipeline com Curl - https://docs.gitlab.com/ee/ci/triggers/#use-curl
