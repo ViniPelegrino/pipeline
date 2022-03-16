@@ -106,14 +106,21 @@
 #    - echo "este job precisa do test_a."
 
 variables:
-  MY_GLOBAL_VAR: value
-
-trigger-downstream:
-  inherit:
-    variables: false
+  GLOBAL_VAR: value
+job1:
   variables:
-    MY_LOCAL_VAR: value
-  trigger: my/project
+    LOCAL_VAR: value
+  script:
+    - echo "GLOBAL_VAR
+    - echo $LOCAL_VAR
+job2:
+  variables:
+    LOCAL_VAR: value
+  script:
+    - echo "GLOBAL_VAR
+    - echo $LOCAL_VAR
+
+
 
 #Fontes
 # Gatilho de pipeline com Curl - https://docs.gitlab.com/ee/ci/triggers/#use-curl
