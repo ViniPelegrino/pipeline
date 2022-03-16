@@ -125,9 +125,10 @@
 
 
 job1:
-  script: echo "Hello, Rules!"
-  rules:
+  script: echo "Executa manualmente"
   when: manual
+job2:
+  script: echo "Executa mesmo sem o Job1 ser executado manualmente"
   allow_failure: true
 
 #Fontes
