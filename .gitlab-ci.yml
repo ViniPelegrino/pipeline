@@ -140,12 +140,18 @@
 #          echo "$i"
 #      done
 
-job1: &cache
+#job1: &cache
+#  script:
+#    - echo "Ola mundo $CI_BUILD_NAME"
+#job2:
+#  <<: *cache
+
+job:
+  tags:
+    - node
   script:
-    - echo "Ola mundo $CI_BUILD_NAME"
-job2:
-  <<: *cache
-  
+    - echo "Verificando shell interativo"
+    - sleep 60
 
 #Fontes
 # Gatilho de pipeline com Curl - https://docs.gitlab.com/ee/ci/triggers/#use-curl
