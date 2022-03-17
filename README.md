@@ -26,7 +26,7 @@ GitLab CI/CD é a parte do GitLab que você usa para todos os métodos contínuo
 ### Gitlab-Runner Shell
 
 gitlab-runner register -n \
-  --url https://versionamento.anvisa.gov.br/ \
+  --url https://gitlab.com \
   --registration-token TOKEN-AQUI \
   --executor shell \
   --description "Runner Shell NOME-DO-SERVER"
