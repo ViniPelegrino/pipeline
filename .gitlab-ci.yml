@@ -151,7 +151,7 @@ job:
     - node
   script:
     - echo "Verificando shell interativo"
-    - sleep 60
+    - /home/cadu/teste.sh
 
 #Fontes
 # Gatilho de pipeline com Curl - https://docs.gitlab.com/ee/ci/triggers/#use-curl
