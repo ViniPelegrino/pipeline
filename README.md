@@ -23,3 +23,10 @@ A Implantação Contínua é outro passo além da Integração Contínua, semelh
 ### GitLab CI/CD
 GitLab CI/CD é a parte do GitLab que você usa para todos os métodos contínuos (Integração, Entrega e Implantação Contínua). Com o GitLab CI/CD, você pode testar, criar e publicar seu software sem a necessidade de aplicativos ou integração de terceiros.
 
+### Gitlab-Runner Shell
+
+gitlab-runner register -n \
+  --url https://versionamento.anvisa.gov.br/ \
+  --registration-token TOKEN-AQUI \
+  --executor shell \
+  --description "Runner Shell NOME-DO-SERVER"
