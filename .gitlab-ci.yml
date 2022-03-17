@@ -151,7 +151,7 @@ job:
     - node
   script:
     - echo "Verificando shell interativo"
-    - sudo apt-get update
+    - sleep 60
 
 #Fontes
 # Gatilho de pipeline com Curl - https://docs.gitlab.com/ee/ci/triggers/#use-curl
