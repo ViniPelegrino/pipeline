@@ -151,12 +151,13 @@ job:
     - echo "Exemplo de cache de arquivo."
   artifacts:
     when: on_success
-    expire_in: 2m
+    expire_in: 3 mins 4 sec
     paths:
       - teste.txt
 
 
 #Fontes
 # Gatilho de pipeline com Curl - https://docs.gitlab.com/ee/ci/triggers/#use-curl
+# Expirar artefatos - https://docs.gitlab.com/ee/ci/yaml/index.html#artifactsexpire_in
 # - https://docs.gitlab.com/ee/ci/jobs/job_control.html
 # Runner Docker - https://docs.gitlab.com/ee/ci/docker/using_docker_images.html#register-a-runner-that-uses-the-docker-executor
