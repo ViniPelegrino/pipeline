@@ -150,9 +150,9 @@ job:
   script:
     - echo "Exemplo de cache de arquivo."
   artifacts:
-    name: "job1-artifacts-file"
+    name: "job-artifacts-file"
     when: on_success
-    expire_in: 2 mins 4 sec
+    expire_in: 1 min 4 sec # '42' ; 42 seconds ; 3 mins 4 sec ; 2 hrs 20 min ; 2h20min ; 6 mos 1 day ; 47 yrs 6 mos and 4d ; 3 weeks and 2 days ; never
     paths:
       - teste2.txt
 
