@@ -148,7 +148,7 @@
 
 job:
   script:
-    - echo "Exemplo de cache de arquivo."
+    - echo "Exemplo de cache de arquivos."
   artifacts:
     name: "job-artifacts-file"
     when: on_success
