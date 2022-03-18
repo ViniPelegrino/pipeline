@@ -149,6 +149,7 @@
 job:
   script:
     - echo "Exemplo de cache de arquivos."
+    - euoiweyrewirowe
   artifacts:
     name: "artefatos-exemplo"
     when: on_success # faça upload de artefatos somente quando o trabalho for bem-sucedido
