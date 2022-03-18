@@ -147,10 +147,14 @@
 #  <<: *cache
 
 job:
-  tags:
-    - node
   script:
-    - sleep 60
+    - echo "Exemplo de cache de arquivo."
+  artifacts:
+    when: on_success
+    expire_in: 20 min
+    paths:
+      - teste.txt
+
 
 #Fontes
 # Gatilho de pipeline com Curl - https://docs.gitlab.com/ee/ci/triggers/#use-curl
