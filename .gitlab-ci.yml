@@ -152,7 +152,7 @@ job:
   artifacts:
     name: "job1-artifacts-file"
     when: on_success
-    expire_in: 3 mins 4 sec
+    expire_in: 2 mins 4 sec
     paths:
       - teste2.txt
 
