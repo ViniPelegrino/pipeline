@@ -151,7 +151,7 @@ job:
     - echo "Exemplo de cache de arquivo."
   artifacts:
     when: on_success
-    expire_in: 20 min
+    expire_in: 2m
     paths:
       - teste.txt
 
