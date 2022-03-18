@@ -150,7 +150,7 @@ job:
   script:
     - echo "Exemplo de cache de arquivo."
   artifacts:
-    name: "job1-artifacts-file"
+    #name: "job1-artifacts-file"
     when: on_success
     expire_in: 3 mins 4 sec
     paths:
