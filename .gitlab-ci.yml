@@ -150,7 +150,6 @@ job:
   tags:
     - node
   script:
-    - echo "Verificando shell interativo"
     - sleep 60
 
 #Fontes
