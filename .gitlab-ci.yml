@@ -208,7 +208,7 @@ build:
           sudo rsync -avh --progress wordpress/* /storage/wordpress/html/
         fi
 
-Deploy wordpress:
+Deploy wordpress: &deploy
   stage: deploy
   tags:
     - shell
@@ -219,6 +219,15 @@ Deploy wordpress:
     - docker-compose down
     - sleep 10
     - docker-compose up -d
+
+Verificar deploy:
+  <<: *deploy
+  dependencies:
+    - Deploy wordpress
+  script:
+    - sleep 10
+    - curl -v http://localhost:8000
+    - echo $?
 
 notificar sucesso: &notificacao
   stage: notificacao
