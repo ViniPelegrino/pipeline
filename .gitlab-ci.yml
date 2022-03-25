@@ -196,6 +196,8 @@ Verificar Compose:
       - $EXECUTAR == "deploy"
       - $EXECUTAR == "qualidade"
   when: on_success
+  tags:
+    - shell
   dependencies:
     - sonarcloud-check
   script:
