@@ -188,16 +188,17 @@ deploy:
   script:
     - echo "Ola mundo"
 
-notificacao-sucesso:
+notificacao-sucesso: &notificacao
   stage: notificacao
+  only:
+    variables:
+      - $EXECUTAR == "deploy"
   when: on_success
   script:
   - echo "sucesso"
 
 notificacao-falhas:
-  stage: notificacao
-  dependencies:
-  - deploy
+  <<: *notificacao
   when: on_failure
   script:
   - echo "falha"
