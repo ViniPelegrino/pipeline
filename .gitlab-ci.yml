@@ -171,6 +171,8 @@ variables:
   GIT_DEPTH: "0"  # Tells git to fetch all the branches of the project, required by the analysis task
 
 sonarcloud-check:
+  tags:
+    - shell
   stage: qualidade
   only:
     variables:
@@ -188,6 +190,8 @@ sonarcloud-check:
 
 deploy:
   stage: deploy
+  tags:
+    - shell
   only:
     variables:
       - $EXECUTAR == "deploy"
@@ -197,6 +201,8 @@ deploy:
 
 notificacao-sucesso: &notificacao
   stage: notificacao
+  tags:
+    - shell
   only:
     variables:
       - $EXECUTAR == "deploy"
