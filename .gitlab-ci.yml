@@ -186,7 +186,7 @@ deploy:
     variables:
       - $EXECUTAR == "deploy"
   script:
-    - echo "Ola mundo"
+    - uyhiygi
 
 notificacao-sucesso: &notificacao
   stage: notificacao
