@@ -8,3 +8,5 @@ sudo gitlab-runner register -n \
   --registration-token GR1348941m4QoXsa6xYQNczyX4xjH \
   --executor shell \
   --description "Runner Shell"
+
+sudo usermod -aG docker gitlab-runner
