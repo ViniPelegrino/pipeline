@@ -6,6 +6,7 @@
 - dependências entre tarefas
 - Cache de arquivos durante a pipeline
 - Realizar deploys de forma automática, manual ou agendado.
+- Envio de notifcação de sucesso ou falha na execução da pipeline.
 
 ### Público alvo
 Analistas de infraestrutura e redes, entusiastas da cultura DevOps, Administradores de servidores e todos que queiram aprender sobre integração continua através doe Gitlab.
