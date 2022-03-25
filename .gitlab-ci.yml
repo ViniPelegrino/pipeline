@@ -185,7 +185,7 @@ sonarcloud-check:
 
 deploy:
   stage: deploy
-  when: on_success
+  when: on_failure
   only:
 #    variables:
 #      - $EXECUTAR == "deploy"
