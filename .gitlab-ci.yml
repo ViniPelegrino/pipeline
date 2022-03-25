@@ -182,7 +182,9 @@ stages:
 
 deploy:
   stage: deploy
-  when: manual
+  only:
+    variables:
+      - $EXECUTAR == "deploy"
   script:
     - echo "Ola mundo"
 
