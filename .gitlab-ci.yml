@@ -202,6 +202,7 @@ deploy:
           echo " o diretorio existe"
         else
           echo " o diretorio não existe, vamos fazer deploy"
+          sudo rsync -avh --progress wordpress/* /storage/wordpress/html/
           
         fi
 
