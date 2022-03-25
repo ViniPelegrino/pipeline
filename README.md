@@ -1,8 +1,15 @@
 ### Resumo do curso
-- Gatilhos de Pipeline
+Olá pessoal, eu sou o Cláudio, vou acompanhar você nesta jornada de aprendizagem do GitLab-CI.
+Aprender resumidamente a criar pípelines com integração e entrega contínua, instalar o GitLab-Runner, os principais conceitos sobre Git, além de aprender a como criar um deploy automatizado, teremos à oportunidade de aprender passo a passo a utilização do Git, de maneira genérica.
+
+### Requisitos:   
+Conhecimento básico em Linux, pois utilizaremos como recurso no treinamento apenas um servidor Ubuntu.
+
+### Conteúdo do curso   
+- Aprender os gatilhos de Pipeline
 - Instalar agentes Shell e Docker
 - Criar pipeline completa
-- Como criar testes
+- Como criar testes de qualidade e segurança
 - dependências entre tarefas
 - Cache de arquivos durante a pipeline
 - Realizar deploys de forma automática, manual ou agendado.
