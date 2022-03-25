@@ -181,6 +181,21 @@ deploy:
   script:
     - echo "Ola mundo"
 
+notificacao-sucesso:
+  stage: notificacao
+  tags:
+  - executor-deploy
+  when: on_success
+  script:
+  - echo "sucesso"
+
+notificacao-falhas:
+  stage: notificacao
+  tags:
+  - executor-deploy
+  when: on_failure
+  script:
+  - echo "falha"
 
 #Fontes
 # Gatilho de pipeline com Curl - https://docs.gitlab.com/ee/ci/triggers/#use-curl
