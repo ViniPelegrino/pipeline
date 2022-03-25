@@ -6,13 +6,14 @@ Aprender resumidamente a criar pípelines com integração e entrega contínua, 
 Conhecimento básico em Linux, pois utilizaremos como recurso no treinamento apenas um servidor Ubuntu.
 
 ### Conteúdo do curso   
-- Aprender os gatilhos de Pipeline
-- Instalar agentes Shell e Docker
-- Criar pipeline completa
-- Como criar testes de qualidade e segurança
-- dependências entre tarefas
-- Cache de arquivos durante a pipeline
-- Realizar deploys de forma automática, manual ou agendado.
+- Aprender os gatilhos de Pipeline;
+- Instalar agentes Shell e Docker;
+- Criar pipeline completa;
+- Trabalhar com variáveis e secrets;
+- Como criar testes de qualidade e segurança;
+- dependências entre tarefas;
+- Cache de arquivos durante a pipeline;
+- Realizar deploys de forma automática, manual ou agendado;
 - Envio de notifcação de sucesso ou falha na execução da pipeline.
 
 ### Público alvo
