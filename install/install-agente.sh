@@ -19,11 +19,11 @@ sudo gitlab-runner register -n \
 
 # Criar o container gitlab-runner para Docker
 docker run -dit \
---name runner-docker \
---restart always \
--v /var/run/docker.sock:/var/run/docker.sock \
--v /opt/gitlab-runner/config:/etc/gitlab-runner \
-gitlab/gitlab-runner:ubuntu-v12.1.0-rc1
+  --name runner-docker \
+  --restart always \
+  -v /var/run/docker.sock:/var/run/docker.sock \
+  -v /opt/gitlab-runner/config:/etc/gitlab-runner \
+  gitlab/gitlab-runner:ubuntu-v12.1.0-rc1
 
 # Ingressar o Runner em modo docker no GitLab
 docker exec -it runner-docker \
