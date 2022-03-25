@@ -186,8 +186,10 @@ deploy:
   script:
     - echo "Ola mundo"
 
-notificacao-sucesso:
+notificacao-sucesso: &notificacao
   stage: notificacao
+  dependencies:
+  - deploy
   tags:
   - executor-deploy
   when: on_success
@@ -195,9 +197,7 @@ notificacao-sucesso:
   - echo "sucesso"
 
 notificacao-falhas:
-  stage: notificacao
-  tags:
-  - executor-deploy
+  <<: *notificacao
   when: on_failure
   script:
   - echo "falha"
