@@ -2,6 +2,8 @@
 Olá pessoal, eu sou o Cláudio, vou acompanhar você nesta jornada de aprendizagem do GitLab-CI.
 Aprender resumidamente a criar pípelines com integração e entrega contínua, instalar o GitLab-Runner, os principais conceitos sobre Git, além de aprender a como criar um deploy automatizado, teremos à oportunidade de aprender passo a passo a utilização do Git, de maneira genérica.
 
+Este treinamento tem como pilar "a qualidade, mais que quantidade de horas". são exemplos simplificados, sem enrolação, pouca teoria e muita mão na massa.
+
 ### Requisitos:   
 Conhecimento básico em Linux, pois utilizaremos como recurso no treinamento apenas um servidor Ubuntu.
 
