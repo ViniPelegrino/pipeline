@@ -195,11 +195,11 @@ Verificar Compose:
     variables:
       - $EXECUTAR == "deploy"
       - $EXECUTAR == "qualidade"
-  when: on_success
   tags:
     - shell
   dependencies:
     - sonarcloud-check
+  when: on_failure
   script:
     - docker-compose config -q
     - echo $?
