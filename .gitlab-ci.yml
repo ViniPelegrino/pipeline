@@ -172,7 +172,7 @@ variables:
 
 sonarcloud-check:
   tags:
-    - shell
+    - docker
   stage: qualidade
   only:
     variables:
