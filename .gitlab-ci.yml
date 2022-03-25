@@ -189,6 +189,18 @@ sonarcloud-check:
   script:
     - sonar-scanner
 
+Verificar Compose:
+  stage: qualidade
+  only:
+    variables:
+      - $EXECUTAR == "deploy"
+      - $EXECUTAR == "qualidade"
+  dependencies:
+    - sonarcloud-check
+  script:
+    - docker-compose config -q
+    - echo $?
+
 build:
   stage: build
   tags:
