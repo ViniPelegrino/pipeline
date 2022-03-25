@@ -199,7 +199,6 @@ Verificar Compose:
     - shell
   dependencies:
     - sonarcloud-check
-  when: on_sucess
   allow_failure: false
   script:
     - docker-compose config -q
