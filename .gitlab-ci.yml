@@ -197,7 +197,14 @@ deploy:
       - $EXECUTAR == "deploy"
   script:
     - |
-    
+        if [ -e "/storage/wordpress/html" ]
+        then
+          echo " o diretorio existe"
+        else
+          echo " o diretorio não existe, vamos fazer deploy"
+          
+        fi
+
 
 notificacao-sucesso: &notificacao
   stage: notificacao
