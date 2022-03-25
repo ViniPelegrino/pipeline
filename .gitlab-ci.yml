@@ -190,8 +190,6 @@ notificacao-sucesso: &notificacao
   stage: notificacao
   dependencies:
   - deploy
-  tags:
-  - executor-deploy
   when: on_success
   script:
   - echo "sucesso"
