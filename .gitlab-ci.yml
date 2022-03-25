@@ -195,6 +195,7 @@ notificacao-sucesso:
   - echo "sucesso"
 
 notificacao-falhas:
+  stage: notificacao
   dependencies:
   - deploy
   when: on_failure
