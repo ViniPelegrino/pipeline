@@ -174,9 +174,7 @@ sonarcloud-check:
   script:
     - sonar-scanner
   only:
-    - merge_requests
-    - master
-    - develop
+    - main
 
 #Fontes
 # Gatilho de pipeline com Curl - https://docs.gitlab.com/ee/ci/triggers/#use-curl
