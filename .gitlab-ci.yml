@@ -186,8 +186,6 @@ Verificar Compose:
 sonarcloud-check:
   tags:
     - docker
-  dependencies:
-    - "Verificar Compose"
   stage: qualidade
   only:
     variables:
