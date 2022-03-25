@@ -206,7 +206,6 @@ deploy:
           
         fi
 
-
 notificacao-sucesso: &notificacao
   stage: notificacao
   tags:
