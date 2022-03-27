@@ -6,7 +6,7 @@ test_a:
   needs: [build_a]
   script:
     - echo "este job precisa do build_a."
-deploy_a:
-  needs: [test_a]
-  script:
-    - echo "este job precisa do test_a."
+#deploy_a:
+#  needs: [test_a]
+#  script:
+#    - echo "este job precisa do test_a."
