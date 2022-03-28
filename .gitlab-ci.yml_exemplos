@@ -1,0 +1,167 @@
+
+
+job1:
+  when: manual
+  script:
+    - echo " Executa somente manual."
+
+job2:
+  stage: deploy
+  when: delayed
+  start_in: 1 minute #5 seconds, 30 minutes, 1 day, 1 week
+  script: echo 'Execucao em 1 minuto...'
+
+job3:
+  timeout: 1m
+  script:
+    - sleep 20
+    - echo "executa com timeout para o stage com maximo de 1 minuto"
+
+job4:
+  script:
+    - echo "Sessao de scripts."
+  after_script:
+    - echo "Sessao após o script."
+
+job5:
+  script:
+    - echo "Executar quando muda um arquivo."
+  only:
+    changes:
+      - teste.txt
+      - docker/scripts/*
+      - "*.md"
+      - scripts/*.{rb,py,sh}
+
+job6:
+  script:
+    - echo "Executa quando solicita mesclagem"
+  only:
+    - merge_requests
+
+job7:
+  only:
+    - tags
+  script:
+    - echo " Executa somente com tag."
+  when: manual
+
+job8:
+  parallel: 3
+  script:
+    - echo "3 trabalhos trabalho paralelo"
+
+###############
+image: alpine
+build_a:
+  script:
+    - echo "Este job compila somente."
+test_a:
+  needs: [build_a]
+  script:
+    - echo "este job precisa do build_a."
+###############
+
+#############
+job9: &cache
+  script:
+    - echo "Ola mundo"
+job10:
+  <<: *cache
+#############
+
+########### Aprendendo Variáveis ###########
+job11:
+  script:
+    - echo "Mostrando variaveis do GitLab"
+    - export
+
+job12:
+  stage: test
+  script:
+    - echo "$CI_JOB_STAGE"
+
+job13:
+  script: echo "Pipeline executa quando for na branch main e com usuário claudiosilva"
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "main" && $GITLAB_USER_LOGIN == "claudiosilva"'
+      when: manual
+    - if: '$CI_COMMIT_BRANCH == "feature"'
+      when: never
+      allow_failure: true
+
+job14:
+  script: echo "Executa exceto mensagem de commit skip-tests"
+  except:
+    variables:
+      - $CI_COMMIT_MESSAGE =~ /skip-tests/
+#############
+variables:
+  GLOBAL_VAR: global
+job15:
+  script:
+    - echo " Apresenta declaração de variavel $GLOBAL_VAR"
+job16:
+  variables:
+    LOCAL_VAR: local
+  script:
+    - echo Apresenta declaração de variavel $GLOBAL_VAR"
+    - echo Apresenta declaração de variavel $LOCAL_VAR"
+#############
+
+job17:
+  variables:
+    FOLDERS: src test docs
+  script:
+    - echo "Script com mais de uma linha."
+    - |
+      i=0
+      while [ $i -ne 5 ]
+        do
+          i=$(($i+1))
+          echo "$i"
+      done
+
+job18:
+  script:
+    - echo "Exemplo de cache de arquivos."
+  artifacts:
+    name: "artefatos-exemplo"
+    when: on_success # faça upload de artefatos somente quando o trabalho for bem-sucedido
+    # Faça upload de artefatos somente quando o trabalho falhar.
+    # always: Sempre carregue artefatos (exceto quando os trabalhos expiram).
+    expire_in: 1 min 5 sec # '42' ; 42 seconds ; 3 mins 4 sec ; 2 hrs 20 min ; 2h20min ; 6 mos 1 day ; 47 yrs 6 mos and 4d ; 3 weeks and 2 days ; never
+    paths:
+      - teste.txt
+
+############# Execução via api #############
+job19:
+  only:
+    - tags
+  when: manual
+  script:
+    - echo " Este Job executa com gatilho de tag."
+
+# Utilizado para gatilho com curl
+#curl -X POST \
+#     --fail \
+#     -F token=c450ddc1e103178a5f6c1d0cd9d6e9 \
+#     -F "ref=0.0.1" \
+#     https://gitlab.com/api/v4/projects/34316608/trigger/pipeline
+
+job20:
+  only:
+    variables:
+      - $GATILHO == "valor"
+  script:
+    - echo "Executando job por uma variavel == valor"
+
+# Utilizado para gatilho com curl
+#curl -X POST \
+#     --fail \
+#     -F token=c450ddc1e103178a5f6c1d0cd9d6e9 \
+#     -F "ref=main" \
+#     -F "variables[GATILHO]=valor" \
+#     https://gitlab.com/api/v4/projects/34316608/trigger/pipeline
+##########################################
+
