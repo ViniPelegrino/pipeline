@@ -1,5 +1,4 @@
 
-
 job1:
   when: manual
   script:
@@ -10,6 +9,25 @@ job2:
   when: delayed
   start_in: 1 minute #5 seconds, 30 minutes, 1 day, 1 week
   script: echo 'Execucao em 1 minuto...'
+
+#####
+
+stages:
+  - e1
+  - e2
+etapa1:
+  stage: e1
+  when: on_success
+  script:
+    - echo "etapa 1"
+
+Etapa2:
+  stage: e2
+  when: on_failure
+  script:
+    - echo "Falha na etapa 1"
+
+#####
 
 job3:
   timeout: 1m
