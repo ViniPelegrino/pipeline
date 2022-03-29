@@ -42,11 +42,17 @@ job3:
     - sleep 20
     - echo "executa com timeout para o stage com maximo de 1 minuto"
 
+################
+before_script:
+  - echo before
+
+after_script:
+  - echo after
+
 job4:
   script:
-    - echo "Sessao de scripts."
-  after_script:
-    - echo "Sessao após o script."
+    - echo "executando o script"
+################
 
 job5:
   script:
