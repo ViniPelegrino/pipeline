@@ -1,4 +1,3 @@
-
 job1:
   when: manual
   script:
@@ -15,17 +14,25 @@ job2:
 stages:
   - e1
   - e2
-etapa1:
+  - e3
+
+Etapa1:
   stage: e1
   when: on_success
   script:
-    - echo "etapa 1"
+    - iopuewqorwerecho "Etapa 1"
 
 Etapa2:
   stage: e2
   when: on_failure
   script:
     - echo "Falha na etapa 1"
+
+Etapa3:
+  stage: e3
+  when: always
+  script:
+    - echo "Sempre será executado"
 
 #####
 
