@@ -64,6 +64,7 @@ job5:
       - "*.md"
       - scripts/*.{rb,py,sh}
 
+#####################
 job6:
   script:
     - echo "Executa quando solicita mesclagem"
@@ -76,6 +77,16 @@ job7:
   script:
     - echo " Executa somente com tag."
   when: manual
+
+job8:
+  only:
+    variables:
+      - $RELEASE == "staging"
+  script: echo "only variables"
+#####################
+
+
+
 
 job8:
   parallel: 3
