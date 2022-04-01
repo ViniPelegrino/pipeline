@@ -94,14 +94,20 @@ job8:
     - echo "3 trabalhos trabalho paralelo"
 
 ###############
-image: alpine
 build_a:
+  image: alpine
   script:
-    - echo "Este job compila somente."
+    - echo "Executando um build"
+    - sleep 10
+  tags:
+    - docker
+
 test_a:
   needs: [build_a]
   script:
-    - echo "este job precisa do build_a."
+    - docker run -dit --name teste ubuntu
+  tags:
+    - shell
 ###############
 
 #############
