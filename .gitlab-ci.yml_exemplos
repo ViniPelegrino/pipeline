@@ -54,6 +54,17 @@ job4:
     - echo "executando o script"
 ################
 
+job11.1:
+  script:
+    - echo "Script com mais de uma linha."
+    - |
+      i=0
+      while [ $i -ne 5 ]
+        do
+          i=$(($i+1))
+          echo "$i"
+      done
+
 job5:
   script:
     - echo "Executar quando muda um arquivo."
@@ -110,13 +121,15 @@ test_a:
     - shell
 ###############
 
-#############
-job9: &cache
+job18:
   script:
-    - echo "Ola mundo"
-job10:
-  <<: *cache
-#############
+    - echo "Exemplo de cache de arquivos."
+  artifacts:
+    name: "artefatos-exemplo"
+    when: on_success # faça upload de artefatos somente quando o trabalho for bem-sucedido
+    expire_in: 1 min 5 sec # '42' ; 42 seconds ; 3 mins 4 sec ; 2 hrs 20 min ; 2h20min ; 6 mos 1 day ; 47 yrs 6 mos and 4d ; 3 weeks and 2 days ; never
+    paths:
+      - teste.txt
 
 ########### Aprendendo Variáveis ###########
 job11:
@@ -129,20 +142,41 @@ job12:
   script:
     - echo "$CI_JOB_STAGE"
 
+#################################
+variables:
+  VAR1: "teste1"
+  VAR2: "teste2"
+
+job12_a:
+  variables:
+    VAR3: "teste3"
+  script:
+    - echo "$VAR1"
+    - echo "$VAR2"
+    - echo "$VAR3"
+
+job12_b:
+  script:
+    - echo "$VAR1"
+    - echo "$VAR2"
+    - echo "$VAR3"
+#################################
+
 job13:
-  script: echo "Pipeline executa quando for na branch main e com usuário claudiosilva"
+  script:
+    - echo "Pipeline executada somente na branch main e usuário executor gitdz"
   rules:
-    - if: '$CI_COMMIT_BRANCH == "main" && $GITLAB_USER_LOGIN == "claudiosilva"'
+    - if: '$CI_COMMIT_BRANCH == "main" && $GITLAB_USER_LOGIN == "gitdz"'
       when: manual
-    - if: '$CI_COMMIT_BRANCH == "feature"'
+    - if: '$CI_COMMIT_BRANCH == "develop"'
       when: never
-      allow_failure: true
 
 job14:
-  script: echo "Executa exceto mensagem de commit skip-tests"
+  script: echo "Executa exceto mensagem de commit push-tests"
   except:
     variables:
-      - $CI_COMMIT_MESSAGE =~ /skip-tests/
+      - $CI_COMMIT_MESSAGE =~ /push-tests/
+
 #############
 variables:
   GLOBAL_VAR: global
@@ -157,30 +191,14 @@ job16:
     - echo Apresenta declaração de variavel $LOCAL_VAR"
 #############
 
-job17:
-  variables:
-    FOLDERS: src test docs
+############# OTIMIZAR YAML
+job9: &cache
+  when: manual
   script:
-    - echo "Script com mais de uma linha."
-    - |
-      i=0
-      while [ $i -ne 5 ]
-        do
-          i=$(($i+1))
-          echo "$i"
-      done
-
-job18:
-  script:
-    - echo "Exemplo de cache de arquivos."
-  artifacts:
-    name: "artefatos-exemplo"
-    when: on_success # faça upload de artefatos somente quando o trabalho for bem-sucedido
-    # Faça upload de artefatos somente quando o trabalho falhar.
-    # always: Sempre carregue artefatos (exceto quando os trabalhos expiram).
-    expire_in: 1 min 5 sec # '42' ; 42 seconds ; 3 mins 4 sec ; 2 hrs 20 min ; 2h20min ; 6 mos 1 day ; 47 yrs 6 mos and 4d ; 3 weeks and 2 days ; never
-    paths:
-      - teste.txt
+    - echo "Ola mundo"
+job10:
+  <<: *cache
+#############
 
 ############# Execução via api #############
 job19:
