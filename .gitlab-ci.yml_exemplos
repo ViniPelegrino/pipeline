@@ -212,6 +212,24 @@ job2:
   script: echo "Resultado da ancora"
 #############
 
+#############
+.before-script: &before
+  - echo "Execute este script primeiro"
+
+.script: &script
+  - echo "Execute este script por segundo"
+
+.after-script: &after
+  - echo "Execute este script por ultimo"
+
+job1:
+  before_script:
+    - *before
+  script:
+    - *script
+    - echo "Execute somente, para este job"
+  after_script:
+    - *after
 
 ############# Execução via api #############
 job19:
@@ -220,6 +238,9 @@ job19:
   when: manual
   script:
     - echo " Este Job executa com gatilho de tag."
+#############
+
+
 
 # Utilizado para gatilho com curl
 #curl -X POST \
