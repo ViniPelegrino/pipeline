@@ -202,14 +202,13 @@ job10:
 
 #############
 job1:
-  only:
-    variables: &variaveis
-      - $GATILHO  == "valor"
-  script: echo "ancora em uma sessão do Job"
+  only: &variavel
+    variables:
+      - $GATILHO == "valor"
+  script: echo "Ancora em uma sessão do Job"
 
 job2:
-  only:
-    variables: *variaveis
+  only: *variavel
   script: echo "Resultado da ancora"
 #############
 
