@@ -200,6 +200,20 @@ job10:
   <<: *cache
 #############
 
+#############
+job1:
+  only:
+    variables: &variaveis
+      - $GATILHO  == "valor"
+  script: echo "ancora em uma sessão do Job"
+
+job2:
+  only:
+    variables: *variaveis
+  script: echo "Resultado da ancora"
+#############
+
+
 ############# Execução via api #############
 job19:
   only:
