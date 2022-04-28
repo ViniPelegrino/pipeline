@@ -2,7 +2,7 @@
 
 # Ingressar o Runner em modo shell no GitLab
 sudo gitlab-runner register -n \
-  --url https://IP-OU-URL \
+  --url http://IP-OU-URL \
   --registration-token TOKEN \
   --executor shell \
   --description "Runner Shell"
@@ -18,7 +18,7 @@ docker run -dit \
 # Ingressar o Runner em modo docker no GitLab
 docker exec -it runner-docker \
 gitlab-runner register -n \
-  --url https://IP-OU-URL \
+  --url http://IP-OU-URL \
   --registration-token TOKEN \
   --clone-url https://IP-OU-URL\
   --executor docker \
