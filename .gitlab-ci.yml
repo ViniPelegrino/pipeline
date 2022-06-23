@@ -1,5 +1,6 @@
-Job0:
+job1:
+  when: manual
   tags:
-      - meulinux
+    - "shell"
   script:
-      - echo "Olá mundo"
+    - echo "Executa somente manual"
