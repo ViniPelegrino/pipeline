@@ -4,6 +4,6 @@
     while [ $i -ne 5]
       do
         i=$(($i+1))
-        echo "s1"
+        echo "$1"
     done
         
