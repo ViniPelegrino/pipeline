@@ -1,6 +1,5 @@
-job1:
-  when: manual
-  tags:
-    - "shell"
-  script:
-    - echo "Executa somente manual"
+job2:
+  when: delayed
+  start_in: 1 minute
+  script: echo "Execução em 1 minuto"
+  
