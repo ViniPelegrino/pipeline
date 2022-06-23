@@ -1,22 +1,5 @@
-stages:
-  - e1
-  - e2
-  - e3
-
-Etapa1:
-  stage: e1
-  when: on_success
+job3:
+  timeout: 1m
   script:
-    - dsfdsfds echo "Etapa 1"
-
-Etapa2:
-  stage: e2
-  when: on_failure
-  script:
-    - echo "Falha na Etapa 1"
-
-Etapa3:
-  stage: e3
-  when: always
-  script:
-    - echo "Sempre será executado"
+    - sleep 20
+    - echo "Executa com timeout por 1 minuto"
