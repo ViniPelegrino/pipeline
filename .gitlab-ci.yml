@@ -1,6 +1,7 @@
 stages:
   - e1
   - e2
+  - e3
 
 Etapa1:
   stage: e1
@@ -13,3 +14,9 @@ Etapa2:
   when: on_failure
   script:
     - echo "Falha na Etapa 1"
+
+Etapa3:
+  stage: e3
+  when: always
+  script:
+    - echo "Sempre será executado"
