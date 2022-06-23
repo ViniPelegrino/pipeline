@@ -1,5 +1,9 @@
-job3:
-  timeout: 20s
+before_script:
+  - echo "Antes do script"
+after_script:
+  - echo "DEpois do script"
+
+job4:
   script:
-    - sleep 25
-    - echo "Executa com timeout por 1 minuto"
+    - echo "Executando script"
+
