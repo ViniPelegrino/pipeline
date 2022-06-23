@@ -1,9 +1,5 @@
-before_script:
-  - echo "Antes do script"
-after_script:
-  - echo "DEpois do script"
-
-job4:
+job:
   script:
-    - echo "Executando script"
+    - chmod +x test.sh
+    - ./test.sh
 
