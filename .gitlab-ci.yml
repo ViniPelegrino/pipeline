@@ -1,6 +1,6 @@
 job1:
   when: manual
-  tags:
+   tags:
     - "shell"
   script:
     - echo "Executa somente manual"
