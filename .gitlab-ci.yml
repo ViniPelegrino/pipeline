@@ -1,5 +1,5 @@
 Job0:
   tags:
-      - shell
+      - meulinux
   script:
       - echo "Olá mundo"
