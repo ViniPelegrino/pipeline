@@ -1,5 +1,19 @@
-job:
+job6:
   script:
-    - chmod +x test.sh
-    - ./test.sh
+    - echo "Executado quando há uma mesclagem"
+  only:
+    - merge_requests
+    
+job7:
+  only:
+    - tags
+  script:
+      - echo "Executando quando uma tag é criada"
+  when: manual
 
+job8:
+  only:
+    variables:
+      - $RELEASE == "stagins"
+  script:
+    - echo "Executando porque declarou a variable RELEASE com valor staging"
