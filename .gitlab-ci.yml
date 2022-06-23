@@ -14,6 +14,6 @@ job7:
 job8:
   only:
     variables:
-      - $RELEASE == "stagins"
+      - $RELEASE == "staging"
   script:
     - echo "Executando porque declarou a variable RELEASE com valor staging"
