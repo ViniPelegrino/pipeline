@@ -6,7 +6,7 @@ Etapa1:
   stage: e1
   when: on_success
   script:
-    - echo "Etapa 1"
+    - dsfdsfds echo "Etapa 1"
 
 Etapa2:
   stage: e2
