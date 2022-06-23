@@ -1,0 +1,6 @@
+Job0:
+  tags:
+      - shell
+  script:
+      - echo "Olá mundo"
+      
