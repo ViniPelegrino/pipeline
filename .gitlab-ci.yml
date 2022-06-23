@@ -1,5 +1,15 @@
-job2:
-  when: delayed
-  start_in: 10 seconds
-  script: echo "Execução em 10 segundos"
-  
+stages:
+  - e1
+  - e2
+
+Etapa1:
+  stage: e1
+  when: on_success
+  script:
+    - echo "Etapa 1"
+
+Etapa2:
+  stage: e2
+  when: on_failure
+  script:
+    - echo "Falha na Etapa 1"
