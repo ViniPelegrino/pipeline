@@ -4,6 +4,6 @@ job18:
   artifacts:
     expire_in: 2 minutes
     paths:
-      - ./test.txt
+      - ./test.sh
 
 
