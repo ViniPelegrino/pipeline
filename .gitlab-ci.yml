@@ -8,9 +8,8 @@ build_a:
 
 test_a:
   needs: [build_a]
-  image: ubuntu
   script:
-    - echo "Executando um build"
+    - docker run -dit --name teste ubuntu
   tags:
     - docker
   
