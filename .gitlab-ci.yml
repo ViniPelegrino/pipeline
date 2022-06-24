@@ -1,10 +1,15 @@
-job18:
+build_a:
+  image: alpine
   script:
-    - echo "Exemplo de cache de arquivos"
-  artifacts:
-    expire_in: 2 minutes
-    name: "Artefato-Exemplo"
-    paths:
-      - ./test.sh
+    - echo "Executando um build"
+    - sleep 15
+  tags:
+    - docker
 
-
+test_a:
+  image: alpine
+  script:
+    - echo "Executando um build"
+  tags:
+    - docker
+  
