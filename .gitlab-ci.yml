@@ -3,6 +3,7 @@ job18:
     - echo "Exemplo de cache de arquivos"
   artifacts:
     expire_in: 2 minutes
+    name: "Artefato-Exemplo"
     paths:
       - ./test.sh
 
