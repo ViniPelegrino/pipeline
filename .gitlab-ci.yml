@@ -2,7 +2,7 @@ build_a:
   image: alpine
   script:
     - echo "Executando um build"
-    - sleep 15
+    - sleep 10
   tags:
     - docker
 
@@ -11,5 +11,5 @@ test_a:
   script:
     - docker run -dit --name teste ubuntu
   tags:
-    - docker
+    - shell
   
