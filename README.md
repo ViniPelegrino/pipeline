@@ -1,4 +1,7 @@
 ### Resumo do curso
+
+Teste
+
 Olá pessoal, eu sou o Cláudio, vou acompanhar você nesta jornada de aprendizagem do GitLab-CI.
 Aprender resumidamente a criar pípelines com integração e entrega contínua, instalar o GitLab-Runner, os principais conceitos sobre Git, além de aprender a como criar um deploy automatizado, teremos à oportunidade de aprender passo a passo a utilização do Git, de maneira genérica.
 
