@@ -7,7 +7,8 @@ build_a:
     - docker
 
 test_a:
-  image: alpine
+  needs: [build_a]
+  image: ubuntu
   script:
     - echo "Executando um build"
   tags:
